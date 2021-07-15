@@ -318,4 +318,3 @@ ggplot(s31a3_act, aes(x = s31a3, fill = s31a3_l)) +
   theme(text = element_text(size=9)) +
   facet_wrap(~ rama1_l, ncol = 5)
 
-
