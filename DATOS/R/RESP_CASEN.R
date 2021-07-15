@@ -3,32 +3,7 @@ library(ggplot2)
 library(RColorBrewer)
 
 #Se lee la Casen y se filtra
-Casen_2017 <- read_dta("C:/Users/Usuario/Desktop/UNIVERSIDAD/INVESTIGACION 2021/DATOS/STATA/Casen 2017.dta")
-
-Casen_2017 = Casen_2017[,c(
-  "folio",
-  "o",
-  "id_vivienda",
-  "hogar",
-  "provincia",
-  "zona",
-  "edad",
-  "comuna",
-  "esc",
-  "e6a",
-  "r1a",
-  "sexo",
-  "s27a",
-  "s27b",
-  "s27c",
-  "s28",
-  "s31a1",
-  "s31a2",
-  "s31a3",
-  "educ",
-  "rama1"
-)]
-
+Casen_2017 <- read_dta("DTA/Casen_red.dta")
 
 #Se generan los grupos de edad
 Casen_2017$g_edad = NA
@@ -62,7 +37,7 @@ s27 = Casen_2017[Casen_2017$s27a < 9,]
 #Histograma pregunta 27a
 ggplot(s27, aes(x = s27a)) + 
   geom_histogram(binwidth = 1, color = "black", fill = "#3d85c6") +
-  labs(title = "Histograma de quienes respondieron S?" ,y = "Frecuencia")
+  labs(title = "Histograma de quienes respondieron Sí" ,y = "Frecuencia")
 
 #Agrupar en S?, No y Blanco
 Casen_2017$s27a_r = NA
